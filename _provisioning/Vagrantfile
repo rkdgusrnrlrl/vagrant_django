@@ -6,6 +6,6 @@ Vagrant.configure("2") do |config|
     v.cpus = 1
     v.memory = 512
   end
-
   config.vm.provision "shell", path: "provisioning.py"
+  config.vm.synced_folder "../mysite/", "/srv/website", create: true
 end
